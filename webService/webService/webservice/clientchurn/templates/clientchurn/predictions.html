@@ -1,0 +1,63 @@
+{% extends 'clientchurn/base.html' %}
+
+
+{% block content %}
+
+
+
+
+    <div class="card text-center">
+  <div></div>
+
+  <div class="card text-center">
+    <div class="card-header">
+      <h5>Numero du Client Pour la prediction</h5>
+    </div>
+    <form action="{% url 'clientchurn:resultat'%}" method="get">
+      {% csrf_token %}
+        <div class="card-body">
+        <h5 class="card-title"></h5>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <!------>
+
+          <div>
+            <input
+              class="form-control-lg"
+              id="formFileLg"
+              type="number"
+              name="custumer_id"
+            />
+            <div>
+              <p>
+                <input
+                  class="btn btn-outline-success btn-lg"
+                  style="margin: 10px; padding-left: 30px; padding-right: 30px"
+                  type="submit"
+                  name="pred"
+                />
+              </p>
+            </div>
+          </div>
+
+          <!---->
+        </div>
+      </div>
+    </form>
+
+
+  </div>
+</div>
+
+
+
+
+
+        <div>{% include 'clientchurn/resultat.html' %}</div>
+
+
+    </div>
+
+
+
+
+{% endblock %}
